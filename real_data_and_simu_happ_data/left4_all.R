@@ -216,7 +216,7 @@ Cos_diag <- matrix(0, 1, pall)
 for (i in 1:pall) {
   Cos_diag[1, i] <- sum((Q_m4[,,i] %*% c_m4 * 10^theta_m4[i]) * hat_f_m4) / sum(hat_f_m4^2)
 }
-# Cos_diag <- round(Cos_diag, 4)
+Cos_diag <- round(Cos_diag, 4)
 Cos_diag
 
 ## single fit ##
