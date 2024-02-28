@@ -11,9 +11,6 @@ library(Rmisc)
 Rcpp::sourceCpp("Kernelmatrix.cpp")
 
 
-
-####################################
-
 ## Selection of Representative Meta
 select_rep <- function(N, Y, pro, uniq = TRUE) {
   nq0 = floor(pro * N)+1
@@ -249,6 +246,14 @@ fitMRD.1
 
 
 ######################## Simulation hippocampus data ######################
+
+################ calculation condition ####################
+# Simulation needs to be parallel computation, 
+# this paper uses 10 cores for parallel computation, 
+# the reader can also according to their own needs 
+# and hardware conditions to set the number of cores that need to be parallel computation
+####################################
+
 
 f.real <- matrix(0, m, 1)
 M <- matrix(0, m, m)
@@ -501,7 +506,7 @@ fitFun_cv <- function(sd){
 
 set.seed(1)
 registerDoMC(30)
-
+## warning! long time runing 
 result.NE2 = foreach(rep = 1:200, .combine = cbind) %dopar%{
   a <- fitFun_cv(0.05)
   b <- fitFun_cv(0.10)
