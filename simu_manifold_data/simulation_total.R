@@ -6,7 +6,15 @@ library(xtable)
 source("Manifold_simulation.R")
 source("Klein_simulation.R")
 
+###########  #############
+# Simulation needs to be parallel computation, 
+# this paper uses 10 cores for parallel computation, 
+# the reader can also according to their own needs 
+# and hardware conditions to set the number of cores that need to be parallel computation
+########################
 
+
+# warning! It takes about a day to run.
 #################### sigma = 0.1^(1/2) ################
 set.seed(2021)
 registerDoMC(10)
@@ -137,7 +145,7 @@ data.f1 <- data.frame(Model = matrix(c(rep('M1',3), rep('M2',3)), 6, 1),
 
 xtable(data.f1,digits=4)
 
-
+# warning! It takes about a day to run.
 #################### sigma = 0.3^(1/2) ################
 set.seed(2021)
 registerDoMC(10)
@@ -275,7 +283,7 @@ xtable(data.f1,digits=4)
 
 
 
-
+# warning! It takes about a day to run.
 #################### sigma = 0.5^(1/2) ################
 set.seed(2021)
 registerDoMC(10)
