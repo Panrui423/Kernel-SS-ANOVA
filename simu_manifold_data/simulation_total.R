@@ -22,18 +22,18 @@ registerDoMC(10)
 result = foreach(i.rep = 1:200, .combine = cbind) %dopar%
 { 
   
-  sim_m1 = simulation_M(n.fit = 100, n.test = 100, h=0.1, 
+  sim_m1 = simulation_M(n.fit = 200, n.test = 100, h=0.1, 
                         scale=c(1/4), sigma=0.1^(1/2))
-  sim_m2 = simulation_M(n.fit = 200, n.test = 100, h=0.1, 
+  sim_m2 = simulation_M(n.fit = 300, n.test = 100, h=0.1, 
                         scale=c(1/4), sigma=0.1^(1/2))
-  sim_m3 = simulation_M(n.fit = 300, n.test = 100, h=0.1, 
+  sim_m3 = simulation_M(n.fit = 400, n.test = 100, h=0.1, 
                         scale=c(1/4), sigma=0.1^(1/2))
 
-  sim_k1 = simulation_K(n.fit = 100, n.test = 100, h=1, 
+  sim_k1 = simulation_K(n.fit = 200, n.test = 100, h=1, 
                         scale=c(1/4), sigma=0.1^(1/2))
-  sim_k2 = simulation_K(n.fit = 200, n.test = 100, h=1, 
+  sim_k2 = simulation_K(n.fit = 300, n.test = 100, h=1, 
                         scale=c(1/4), sigma=0.1^(1/2))
-  sim_k3 = simulation_K(n.fit = 300, n.test = 100, h=1, 
+  sim_k3 = simulation_K(n.fit = 400, n.test = 100, h=1, 
                         scale=c(1/4), sigma=0.1^(1/2))
   
   rbind(sim_m1, sim_m2, sim_m3,
@@ -123,7 +123,7 @@ K_predict_sd_m4 = sim_sd[cmat[16,]+48]
 
 data.f1 <- data.frame(Model = matrix(c(rep('M1',3), rep('M2',3)), 6, 1),
                       
-                      Sample.size = matrix(c(rep(c(100,200,300),2)), 6, 1),
+                      Sample.size = matrix(c(rep(c(200,300,400),2)), 6, 1),
  
                       MSE.predict_M2_4 = matrix(c(c(M_predict_error_m2[1:3]), c(K_predict_error_m2[1:3])), 6, 1),
                       
@@ -152,18 +152,18 @@ registerDoMC(10)
 result_sigma_3 = foreach(i.rep = 1:200, .combine = cbind) %dopar%
   { 
     
-    sim_m1 = simulation_M(n.fit = 100, n.test = 100, h=0.1, 
+    sim_m1 = simulation_M(n.fit = 200, n.test = 100, h=0.1, 
                           scale=c(1/4), sigma=0.3^(1/2))
-    sim_m2 = simulation_M(n.fit = 200, n.test = 100, h=0.1, 
+    sim_m2 = simulation_M(n.fit = 300, n.test = 100, h=0.1, 
                           scale=c(1/4), sigma=0.3^(1/2))
-    sim_m3 = simulation_M(n.fit = 300, n.test = 100, h=0.1, 
+    sim_m3 = simulation_M(n.fit = 400, n.test = 100, h=0.1, 
                           scale=c(1/4), sigma=0.3^(1/2))
     
-    sim_k1 = simulation_K(n.fit = 100, n.test = 100, h=1, 
+    sim_k1 = simulation_K(n.fit = 200, n.test = 100, h=1, 
                           scale=c(1/4), sigma=0.3^(1/2))
-    sim_k2 = simulation_K(n.fit = 200, n.test = 100, h=1, 
+    sim_k2 = simulation_K(n.fit = 300, n.test = 100, h=1, 
                           scale=c(1/4), sigma=0.3^(1/2))
-    sim_k3 = simulation_K(n.fit = 300, n.test = 100, h=1, 
+    sim_k3 = simulation_K(n.fit = 400, n.test = 100, h=1, 
                           scale=c(1/4), sigma=0.3^(1/2))
 
     
@@ -255,7 +255,7 @@ K_predict_sd_m4 = sim_sd[cmat[16,]+48]
 
 data.f1 <- data.frame(Model = matrix(c(rep('M1',3), rep('M2',3)), 6, 1),
                       
-                      Sample.size = matrix(c(rep(c(100,200,300),2)), 6, 1),
+                      Sample.size = matrix(c(rep(c(200,300,400),2)), 6, 1),
                                
                       MSE.predict_M2_4 = matrix(c(c(M_predict_error_m2[1:3]), c(K_predict_error_m2[1:3])), 6, 1),
                       
@@ -290,18 +290,18 @@ registerDoMC(10)
 result_sigma_5 = foreach(i.rep = 1:200, .combine = cbind) %dopar%
   { 
     
-    sim_m1 = simulation_M(n.fit = 100, n.test = 100, h=0.1, 
+    sim_m1 = simulation_M(n.fit = 200, n.test = 100, h=0.1, 
                           scale=c(1/4), sigma=0.5^(1/2))
-    sim_m2 = simulation_M(n.fit = 200, n.test = 100, h=0.1, 
+    sim_m2 = simulation_M(n.fit = 300, n.test = 100, h=0.1, 
                           scale=c(1/4), sigma=0.5^(1/2))
-    sim_m3 = simulation_M(n.fit = 300, n.test = 100, h=0.1, 
+    sim_m3 = simulation_M(n.fit = 400, n.test = 100, h=0.1, 
                           scale=c(1/4), sigma=0.5^(1/2))
     
-    sim_k1 = simulation_K(n.fit = 100, n.test = 100, h=1, 
+    sim_k1 = simulation_K(n.fit = 200, n.test = 100, h=1, 
                           scale=c(1/4), sigma=0.5^(1/2))
-    sim_k2 = simulation_K(n.fit = 200, n.test = 100, h=1, 
+    sim_k2 = simulation_K(n.fit = 300, n.test = 100, h=1, 
                           scale=c(1/4), sigma=0.5^(1/2))
-    sim_k3 = simulation_K(n.fit = 300, n.test = 100, h=1, 
+    sim_k3 = simulation_K(n.fit = 400, n.test = 100, h=1, 
                           scale=c(1/4), sigma=0.5^(1/2))
 
     rbind(sim_m1, sim_m2, sim_m3,
@@ -392,7 +392,7 @@ K_predict_sd_m4 = sim_sd[cmat[16,]+48]
 
 data.f1 <- data.frame(Model = matrix(c(rep('M1',3), rep('M2',3)), 6, 1),
                       
-                      Sample.size = matrix(c(rep(c(100,200,300),2)), 6, 1),
+                      Sample.size = matrix(c(rep(c(200,300,400),2)), 6, 1),
                                        
                       MSE.predict_M2_4 = matrix(c(c(M_predict_error_m2[1:3]), c(K_predict_error_m2[1:3])), 6, 1),
                       
