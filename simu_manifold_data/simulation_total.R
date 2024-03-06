@@ -23,18 +23,18 @@ result = foreach(i.rep = 1:200, .combine = cbind) %dopar%
 { 
   
   sim_m1 = simulation_M(n.fit = 200, n.test = 100, h=0.1, 
-                        scale=c(1/4), sigma=0.1^(1/2))
+                        scale=c(1/4), sigma=0.05)
   sim_m2 = simulation_M(n.fit = 300, n.test = 100, h=0.1, 
-                        scale=c(1/4), sigma=0.1^(1/2))
+                        scale=c(1/4), sigma=0.05)
   sim_m3 = simulation_M(n.fit = 400, n.test = 100, h=0.1, 
-                        scale=c(1/4), sigma=0.1^(1/2))
+                        scale=c(1/4), sigma=0.05)
 
   sim_k1 = simulation_K(n.fit = 200, n.test = 100, h=1, 
-                        scale=c(1/4), sigma=0.1^(1/2))
+                        scale=c(1/4), sigma=0.05)
   sim_k2 = simulation_K(n.fit = 300, n.test = 100, h=1, 
-                        scale=c(1/4), sigma=0.1^(1/2))
+                        scale=c(1/4), sigma=0.05)
   sim_k3 = simulation_K(n.fit = 400, n.test = 100, h=1, 
-                        scale=c(1/4), sigma=0.1^(1/2))
+                        scale=c(1/4), sigma=0.05)
   
   rbind(sim_m1, sim_m2, sim_m3,
         sim_k1, sim_k2, sim_k3)
@@ -153,18 +153,18 @@ result_sigma_3 = foreach(i.rep = 1:200, .combine = cbind) %dopar%
   { 
     
     sim_m1 = simulation_M(n.fit = 200, n.test = 100, h=0.1, 
-                          scale=c(1/4), sigma=0.3^(1/2))
+                          scale=c(1/4), sigma=0.1)
     sim_m2 = simulation_M(n.fit = 300, n.test = 100, h=0.1, 
-                          scale=c(1/4), sigma=0.3^(1/2))
+                          scale=c(1/4), sigma=0.1)
     sim_m3 = simulation_M(n.fit = 400, n.test = 100, h=0.1, 
-                          scale=c(1/4), sigma=0.3^(1/2))
+                          scale=c(1/4), sigma=0.1)
     
     sim_k1 = simulation_K(n.fit = 200, n.test = 100, h=1, 
-                          scale=c(1/4), sigma=0.3^(1/2))
+                          scale=c(1/4), sigma=0.1)
     sim_k2 = simulation_K(n.fit = 300, n.test = 100, h=1, 
-                          scale=c(1/4), sigma=0.3^(1/2))
+                          scale=c(1/4), sigma=0.1)
     sim_k3 = simulation_K(n.fit = 400, n.test = 100, h=1, 
-                          scale=c(1/4), sigma=0.3^(1/2))
+                          scale=c(1/4), sigma=0.1)
 
     
     rbind(sim_m1, sim_m2, sim_m3,
@@ -291,18 +291,18 @@ result_sigma_5 = foreach(i.rep = 1:200, .combine = cbind) %dopar%
   { 
     
     sim_m1 = simulation_M(n.fit = 200, n.test = 100, h=0.1, 
-                          scale=c(1/4), sigma=0.5^(1/2))
+                          scale=c(1/4), sigma=0.15)
     sim_m2 = simulation_M(n.fit = 300, n.test = 100, h=0.1, 
-                          scale=c(1/4), sigma=0.5^(1/2))
+                          scale=c(1/4), sigma=0.15)
     sim_m3 = simulation_M(n.fit = 400, n.test = 100, h=0.1, 
-                          scale=c(1/4), sigma=0.5^(1/2))
+                          scale=c(1/4), sigma=0.15)
     
     sim_k1 = simulation_K(n.fit = 200, n.test = 100, h=1, 
-                          scale=c(1/4), sigma=0.5^(1/2))
+                          scale=c(1/4), sigma=0.15)
     sim_k2 = simulation_K(n.fit = 300, n.test = 100, h=1, 
-                          scale=c(1/4), sigma=0.5^(1/2))
+                          scale=c(1/4), sigma=0.15)
     sim_k3 = simulation_K(n.fit = 400, n.test = 100, h=1, 
-                          scale=c(1/4), sigma=0.5^(1/2))
+                          scale=c(1/4), sigma=0.15)
 
     rbind(sim_m1, sim_m2, sim_m3,
           sim_k1, sim_k2, sim_k3)
