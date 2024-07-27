@@ -2,9 +2,13 @@
 Analysis of Variance of Tensor Product Reproducing Kernel Hilbert Spaces on Metric Spaces
 
 ## Notes
-1. The project contains the simu_manifold_data folder holding the programs associated with the Manifolds data portion of the article in Section 7, Simulation.
+simulation_Lu.R :  Compute prediction error from the proposed method and Lu's method (Distance kernel). Table S.1 in Supplementary material.
 
-2. Due to the ADNI data is too large, after compression still can not be uploaded, so for the time being will not be placed here, if readers need the data can be e-mail contact.
+simulation_random_represent.R:  Compute MSE  for some randomly selected representative samples across different settings.  Table S.2 in Supplementary material.
+
+simulation_pred_runtime.R: Compute prediction errors  and computation times from the four methods: the proposed kernels, the Exponential kernel and the Laplacian kernel. Table 3 and Table 4 in the main manuscript.
+
+Other codes: used in the 3 programs abovementioned.
 
 
 
