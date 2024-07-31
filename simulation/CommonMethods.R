@@ -1,4 +1,16 @@
-
+### AIC BIC
+AICBIC = function(M, nlambda, s, Y.all, hat_f_m_p)
+{
+  N = length(Y.all)
+  M <- M + nlambda * diag(N)
+  M_inv = solve(M)
+  Alam = diag(N) - (nlambda)*(M_inv - M_inv %*% s %*% solve(t(s) %*% M_inv %*% s) %*% t(s) %*% M_inv)
+  
+  res = c(N * log(mean((Y.all - hat_f_m_p)^2)) + 2  * sum(diag(Alam)), 
+          N * log(mean((Y.all - hat_f_m_p)^2)) + log(N)  * sum(diag(Alam)), sum(diag(Alam)))
+  
+  res
+}
 
 
 ## Selection of Representative Meta
